@@ -1,0 +1,7 @@
+{
+  "name": "railway-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
