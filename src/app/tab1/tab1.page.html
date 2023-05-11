@@ -13,6 +13,7 @@
     </ion-toolbar>
   </ion-header> -->
   <div class="flex-center">
+    <form [formGroup]="form">
     <ion-card>
       <ion-card-header color="warning">
         <ion-card-title>Railway app</ion-card-title>
@@ -21,18 +22,23 @@
     
       <ion-card-content>
         <ion-item>
-          <ion-label labelPlacement="floating">E-mail: </ion-label>
-          <ion-input type="email"></ion-input>
+          <ion-label labelPlacement="floating" >E-mail: </ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
         </ion-item>
+        <!-- <app-error-message [field]="form.get('email')" error="required" message="E-mail is required" ></app-error-message>
+        <app-error-message [field]="form.get('email')" error="email" message="E-mail is invalid" ></app-error-message> -->
+        <!-- <ion-label *ngIf="form.get('email').touched">E-mail is invalid</ion-label> -->
         <ion-item>
           <ion-label labelPlacement="floating">Password: </ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-input type="password" formControlName="password"></ion-input>
         </ion-item>
-        <ion-button color="dark" fill="clear" size="full">I forgot my e-mail or password</ion-button>
-        <ion-button color="warning" size="full" shape="round" (click)="login()">LOGIN</ion-button>
+        <!-- <p *ngIf="form.get('password').touched">Password is invalid</p> -->
+        <ion-button color="dark" fill="clear" size="full" >I forgot my e-mail or password</ion-button>
+        <ion-button color="warning" size="full" shape="round" [disabled]="!form.valid" (click)="login()">LOGIN</ion-button>
         <ion-button color="warning" fill="clear" size="full" shape="round" (click)="register()">REGISTER</ion-button>
       </ion-card-content>
     </ion-card>
+  </form>
   </div>
   
 
