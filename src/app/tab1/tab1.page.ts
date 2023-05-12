@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginPageForm } from './login.page.form';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-tab1',
@@ -12,6 +13,7 @@ export class Tab1Page {
 
   form!: FormGroup;
 
+  // , private store:Store<AppsState>
   constructor(private router: Router, private formBuilder:FormBuilder) {}
 
   ngOnInit(){
