@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
 import { AppStoreModule } from 'src/store/AppStoreModule';
 import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {} from '@angular/fire'
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
